@@ -1,21 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --tronAccent: #ffcc00; /* Sample Tron accent color */
+  --tronGray: #a1a1a1;
+  --tronBlue: #00bfff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Applying styles with the apply directive */
 
 body {
+  @apply bg-tronBackground text-tronText font-body;
+}
+
+.main-container {
+  @apply w-full h-screen flex justify-center items-center;
+}
+
+.heading {
+  @apply text-tronAccent text-3xl font-display mb-4;
+}
+
+.paragraph {
+  @apply text-tronGray;
+}
+
+.link {
+  @apply text-tronBlue underline mt-2;
+}
+
+/* Font classes */
+.font-body {
+  font-family: 'Inconsolata', monospace;
+}
+
+.font-display {
+  font-family: 'Inconsolata', monospace;
+}
+
+/* Color classes */
+.bg-tronBackground {
+  background-color: var(--background);
+}
+
+.text-tronText {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-tronAccent {
+  color: var(--tronAccent);
+}
+
+.text-tronGray {
+  color: var(--tronGray);
+}
+
+.text-tronBlue {
+  color: var(--tronBlue);
 }
